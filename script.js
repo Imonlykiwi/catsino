@@ -3,6 +3,11 @@ const button = document.querySelector("button");
 const croupier = document.querySelector('#croupier');
 const bg = document.querySelectorAll('.bg');
 
+const sounds = [
+  new Audio('sound/meow.mp3'),
+  new Audio('sound/purr.mp3')
+];
+
 class Cards {
   constructor(cont, btn, croupier, bgc) {
     this.container = cont;
