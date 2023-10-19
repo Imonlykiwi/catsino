@@ -1,5 +1,7 @@
 const container = document.querySelector(".gif");
 const button = document.querySelector("button");
+const bg = document.querySelectorAll('.bg')
+const croupier = document.querySelector('#croupier')
 
 class Cards {
   constructor(cont, btn) {
@@ -58,20 +60,14 @@ class Cards {
   }
 
   checkCards(cards) {
-    console.group("numbers");
-    console.log(cards);
-    console.log(cards[0], cards[0].dataset.number);
-    console.log(cards[1], cards[1].dataset.number);
-    console.log(cards[2], cards[2].dataset.number);
-    console.groupEnd();
     if (
       cards[0].dataset.number == cards[1].dataset.number &&
       cards[0].dataset.number == cards[2].dataset.number
     ) {
-      const bg = document.querySelectorAll('.bg')
-      bg.forEach(element => {
-        element.style.display = 'block'
-      })
+      bg.forEach(e => {
+        e.style.display = 'block';
+      });
+      croupier.src = 'img/saul.png';
     }
   }
 
