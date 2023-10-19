@@ -1,12 +1,14 @@
 const container = document.querySelector(".gif");
 const button = document.querySelector("button");
-const bg = document.querySelectorAll('.bg')
-const croupier = document.querySelector('#croupier')
+const croupier = document.querySelector('#croupier');
+const bg = document.querySelectorAll('.bg');
 
 class Cards {
-  constructor(cont, btn) {
+  constructor(cont, btn, croupier, bgc) {
     this.container = cont;
     this.button = btn;
+    this.croupier = croupier
+    this.background = bgc
     this.images = [
         "./img/1.jpg",
         "./img/2.png",
@@ -64,10 +66,10 @@ class Cards {
       cards[0].dataset.number == cards[1].dataset.number &&
       cards[0].dataset.number == cards[2].dataset.number
     ) {
-      bg.forEach(e => {
+      this.background.forEach(e => {
         e.style.display = 'block';
       });
-      croupier.src = 'img/saul.png';
+      this.croupier.src = 'img/saul.png';
     }
   }
 
@@ -83,4 +85,4 @@ class Cards {
   }
 }
 
-const cards = new Cards(container, button);
+const cards = new Cards(container, button, croupier, bg);
