@@ -2,6 +2,8 @@ const container = document.querySelector(".gif");
 const button = document.querySelector("button");
 const bg = document.querySelectorAll('.bg')
 const croupier = document.querySelector('#croupier')
+const meow = new Audio('sound/meow.mp3');
+const purr = new Audio('sound/purr.mp3');
 
 class Cards {
   constructor(cont, btn) {
